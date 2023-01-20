@@ -66,6 +66,7 @@
 [Code](HowToBuildCNN_step4.ipynb)
 
 ### Target
+- decrease the dropout rate (0.025, 0.02, 0.01) to avoid underfitting
 
 ### Results
 1. Parameters: 9,968
@@ -73,12 +74,17 @@
 3. Test Accuracy: 99.27%
 
 ### Analysis
+- the dropout = 0.01, got the desired results and it helped to avoid underfitting
+- but the model is not crossing the mark of 99.3 
+- We can rotations and vertical and horizontal shift in images as we saw it in some images
 
 ## STEP 5
 
 [Code](HowToBuildCNN_step5.ipynb)
 
 ### Target
+- add rotations (7 degrees) to images
+- add vertical and horizontal shift (5% of height and width)
 
 ### Results
 1. Parameters: 9,968
@@ -86,12 +92,17 @@
 3. Test Accuracy: 99.30%
 
 ### Analysis
+- training become difficult as the train accuracy dropped
+- no significant change in test accuracy
+- no consistency in test accuracy 
 
 ## STEP 6
 
 [Code](HowToBuildCNN_step6.ipynb)
 
 ### Target
+- add LR scheduler for the consistency of accuracy
+- added StepLR with steps=7 and making LR 1/10th of previous LR after every 7 steps (tried 3, 4, 5, 6 but test accuracy didn't cross 99.35%)
 
 ### Results
 1. Parameters: 9,968
@@ -99,3 +110,6 @@
 3. Test Accuracy: 99.42%
 
 ### Analysis
+- got desired results of test accuracy approximating 99.4%
+- test accuracy gets consistent in few last epochs ranging from 99.37 to 99.42
+- can be improved further with better LR scheduler
