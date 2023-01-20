@@ -94,7 +94,8 @@
 ### Analysis
 - training become difficult as the train accuracy dropped
 - no significant change in test accuracy
-- no consistency in test accuracy 
+- model not learning faster therefore test accuracy is not crossing 99.30 mark, therefore LR should be increased
+- no consistency in test accuracy, therefor LR scheduler should be used
 
 ## STEP 6
 
@@ -102,14 +103,15 @@
 
 ### Target
 - add LR scheduler for the consistency of accuracy
-- added StepLR with steps=7 and making LR 1/10th of previous LR after every 7 steps (tried 3, 4, 5, 6 but test accuracy didn't cross 99.35%)
-
+- increased LR from 0.01 to 0.3 to maked model learn faster
+- added StepLR with steps=4 and making LR 1/10th of previous LR after every 4 steps
+- 
 ### Results
 1. Parameters: 9,968
-2. Train Accuracy: 98.95%
-3. Test Accuracy: 99.42%
+2. Train Accuracy: 99.17%
+3. Test Accuracy: 99.46%
 
 ### Analysis
-- got desired results of test accuracy approximating 99.4%
-- test accuracy gets consistent in few last epochs ranging from 99.37 to 99.42
+- got desired results of test accuracy above 99.4% for multiple epochs
+- test accuracy gets consistent in few last epochs ranging from 99.44 to 99.46
 - can be improved further with better LR scheduler
